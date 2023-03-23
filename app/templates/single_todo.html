@@ -1,0 +1,10 @@
+<!--todo -->
+<li class="{% if  todo.current_status %}completed{% endif %}">
+    <div onclick ="window.location ='{% url 'app:update_todo' todo.id %}';" class="form-check"> 
+        <label class="form-check-label"> 
+            <input class="checkbox" type="checkbox" "{% if todo.current_status %} checked {% endif %}"> {{todo.description}} 
+            <i class="input-helper"></i>
+        </label>
+    </div> 
+    <i onclick ="window.location ='{% url 'app:delete_todo' todo.id %}';"class="remove mdi mdi-close-circle-outline"></i>
+</li>
